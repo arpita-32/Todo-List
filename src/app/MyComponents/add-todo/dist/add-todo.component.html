@@ -1,14 +1,16 @@
-<div class="my-3">
-  <h4>Add a Todo</h4>
+<div class="my-4 p-4 rounded shadow-sm bg-light">
+  <h4 class="text-center text-primary mb-4">Add a Todo</h4>
   <form (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label for="title" class="form-label">Todo Title</label>
-      <input type="text" [(ngModel)]="title" class="form-control" name="title" id="title">
+      <label for="title" class="form-label fw-bold">Todo Title</label>
+      <input type="text" [(ngModel)]="title" class="form-control border-primary shadow-sm" name="title" id="title" placeholder="Enter title">
     </div>
     <div class="mb-3">
-      <label for="desc" class="form-label">Todo Description</label>
-      <input type="text" [(ngModel)]="desc" class="form-control" id="desc" name="desc">
+      <label for="desc" class="form-label fw-bold">Todo Description</label>
+      <input type="text" [(ngModel)]="desc" class="form-control border-primary shadow-sm" id="desc" name="desc" placeholder="Enter description">
     </div>
-    <button type="submit" class="btn btn-sm btn-primary">Add Todo</button>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary btn-lg px-5 shadow">Add Todo</button>
+    </div>
   </form>
 </div>
