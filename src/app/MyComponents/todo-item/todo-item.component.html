@@ -1,17 +1,24 @@
-<div class="my-3">
-  <h5 [ngClass]="{'strike': !todo.active}">{{ todo.title }}</h5>
-  <p [ngClass]="{'strike': !todo.active}">{{ todo.desc }}</p>
+<div class="my-3 p-4 border rounded shadow-sm bg-light position-relative">
+  <h5 [ngClass]="{'strike text-muted': !todo.active}" class="fw-bold">{{ todo.title }}</h5>
+  <p [ngClass]="{'strike text-muted': !todo.active}" class="mb-3">{{ todo.desc }}</p>
 
-  <div class="mb-3 form-check">
+  <div class="form-check mb-3">
     <input
       type="checkbox"
       class="form-check-input"
       id="todo{{i}}"
       (click)="onCheckboxClick(todo)" 
-      [checked]="!todo.active"  
+      [checked]="!todo.active"
+      style="cursor: pointer; transform: scale(1.2);"
     />
-    <label class="form-check-label" for="todo{{i}}">Done</label>
+    <label class="form-check-label ms-2" for="todo{{i}}" style="cursor: pointer;">
+      <span [ngClass]="{'text-success': todo.active, 'text-muted': !todo.active}">
+        {{ todo.active ? 'Mark as Done' : 'Done' }}
+      </span>
+    </label>
   </div>
 
-  <button class="btn btn-sm btn-danger" (click)="onClick(todo)">Delete</button>
+  <button class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2" (click)="onClick(todo)">
+    <i class="bi bi-trash"></i> Delete
+  </button>
 </div>
