@@ -31,4 +31,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Add new tasks to the list
 - Delete tasks
 - Mark tasks as complete or incomplete
-  
